@@ -1,9 +1,16 @@
 import PropTypes from 'prop-types';
 import { nanoid } from 'nanoid';
 import { FilterWrapp } from './Filter.styled';
+import { setFilter } from 'redux/filterSlice';
+import { useDispatch } from 'react-redux';
+export default function Filter({ filter }) {
+  const dispatch = useDispatch();
 
+  const handleChange = e => {
+    const value = e.target.value;
+    dispatch(setFilter(value));
+  };
 
-export default function Filter({ filter, handleChange }) {
   const filterID = nanoid();
   return (
     <FilterWrapp>
