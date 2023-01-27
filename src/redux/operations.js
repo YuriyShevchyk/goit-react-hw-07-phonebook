@@ -6,7 +6,7 @@ const isDublicate = ({ name, number }, contacts) => {
 
   const result = contacts.find(item => {
     return (
-      normalizedName === item.name.toLowerCase() &&
+      normalizedName === item.name.toLowerCase() ||
       number === item.number.toLowerCase()
     );
   });
